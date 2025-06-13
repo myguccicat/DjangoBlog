@@ -17,7 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+from posts.views import index
+# URL patterns for the DjangoBlog project
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", index),  # Home page that lists all articles
 ]
