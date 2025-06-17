@@ -17,3 +17,8 @@ def index(request):
 
 def about(request):
     return HttpResponse("hello world")
+
+from datetime import datetime
+def index_use_template(requests):
+    now = datetime.now()
+    return render(requests, "index.html", locals())
