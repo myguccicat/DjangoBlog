@@ -1,0 +1,11 @@
+{% extends 'scaffolds/base.html' %}
+
+{% block content %}
+    <h1>
+        {{article.title}}
+    </h1>
+    <hr>
+    <p class="post-body"> {{article.content}} </p>
+    <p class="post-date"> {{article.pub_date}} </p>
+    <a href="/"><h5> 回首頁 </h5></a>
+{% endblock %}

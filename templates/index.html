@@ -24,7 +24,7 @@
         <h1> Welcome to MyBlog </h1>
         <hr>
         {% comment %} {{ article_records }} {% endcomment %}
-        {% for article_records %}
+        {% for article in article_records %}
             <p class='post-tiltle'>{{ article.title }}</p>
             <p class='post-content'>{{ article.content }}</p>
             <p class='post-date'>{{ article_pub.date }}</p>

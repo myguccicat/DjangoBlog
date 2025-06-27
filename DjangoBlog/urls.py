@@ -20,6 +20,8 @@ from django.urls import path
 from posts.views import index
 from posts.views import about   
 from posts.views import index_use_template
+from posts.views import showPost
+from posts.views import login
 # URL patterns for the DjangoBlog project
 
 urlpatterns = [
@@ -27,4 +29,6 @@ urlpatterns = [
     # path("", index),
     path("", index_use_template),
     path("about", about),
+    path("post/<slug:slug>", showPost),
+    path('login', login),
 ]
