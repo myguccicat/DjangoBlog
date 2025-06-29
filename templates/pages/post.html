@@ -5,7 +5,8 @@
         {{article.title}}
     </h1>
     <hr>
-    <p class="post-body"> {{article.content}} </p>
+    {% load markdown_tag %}
+    <p class="post-body"> {{article.content | markdown | safe | linebreaks}} </p>
     <p class="post-date"> {{article.pub_date}} </p>
     <a href="/"><h5> 回首頁 </h5></a>
 {% endblock %}
