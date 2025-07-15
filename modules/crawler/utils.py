@@ -1,10 +1,10 @@
-#import requests
-#from bs4 import BeautifulSoup
-#import time
-#import pandas
+import requests
+from bs4 import BeautifulSoup
+import time
+import pandas
 
 
-def parserTarget(url_type, **kwargs):
+def parserTargetURL(url_type, **kwargs):
     base_url = "https://www.ptt.cc/" # PTT 網址
     target_page_name = "index"
     target_page_ext = ".html"
@@ -50,9 +50,9 @@ def test_kwarge(**kwargs):
 def run(**kwargs):
     full_article = []
 
-    target_url = parserTarget('board', **kwargs)
+    target_url = parserTargetURL('board', **kwargs)
     res = requests.get(target_url)
-    html = BeautifulSoup(res.text)
+    html = BeautifulSoup(res.text, features="html.parser")
 
     article_title = html.find_all('div', class_='title')
 
@@ -61,9 +61,9 @@ def run(**kwargs):
             temp_url = title.find('a').attrs['href']
             temp_title = title.find('a').contents[0]
 
-            article_url = parserTarget('article', articleURL=temp_url)
+            article_url = parserTargetURL('article', articleURL=temp_url)
             article_html = requests.get(article_url)
-            article_html = BeautifulSoup(article_html.text)
+            article_html = BeautifulSoup(article_html.text, features="html.parser")
 
             # 文章內容
             content = article_html.find('div', id='main-content').text

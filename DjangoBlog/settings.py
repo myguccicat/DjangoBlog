@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "posts",  # Custom app for blog posts
+    "posts",  
+    "line_bot",  # Custom app for LINE Bot
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,6 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LINE_CHANNEL_SECRET = "a308230236614b5c2170503cf3965c93"
+LINE_CHANNEL_ACCESS_TOKEN = "0uW6gJBnFqF9CAa8d8/6f7Bg6TVPQe9yOdZW//s/LIgCFU+vPpHXnk3sxWbI1lDsiSPZ6xMraBSy3jc5JbPUe2a8dK92M8s14QyIPbUJihQXGGUwyTNrpzDGF4PbmVPGxg8vM4tugGJGhvEjiMtbnQdB04t89/1O/w1cDnyilFU="

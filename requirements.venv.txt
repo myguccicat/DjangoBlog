@@ -2,3 +2,4 @@ beautifulsoup4==4.13.4
 Django==5.2.4
 Markdown==3.8.2
 pandas==2.3.1
+line-bot-sdk==3.11.0
