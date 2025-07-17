@@ -23,6 +23,8 @@ from posts.views import index_use_template
 from posts.views import showPost
 from posts.views import login
 from line_bot.views import callback
+from django.conf import settings
+from django.conf.urls.static import static
 # URL patterns for the DjangoBlog project
 
 urlpatterns = [
@@ -34,3 +36,5 @@ urlpatterns = [
     path('login', login),
     path('line/', callback),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
