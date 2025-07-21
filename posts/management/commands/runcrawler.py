@@ -16,9 +16,9 @@ class Command(BaseCommand):
         target_num = options.get('pages')
 
 
-        if target_board is None:
+        if target_board == None:
             target_board = 'Stock'
-        if target_num is None:
+        if target_num == None:
             target_num = ""
 
 
@@ -36,3 +36,4 @@ class Command(BaseCommand):
                 )
                 article_model.save()
         return None
+        print("爬蟲完成, {} 看板 {} 頁數".format(target_board, target_num))  
